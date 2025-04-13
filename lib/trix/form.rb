@@ -13,7 +13,7 @@ module TrixEditorHelper
     attributes[:autofocus] = true if options[:autofocus]
     attributes[:input] = options[:input] || "trix_input_#{TrixEditorHelper.id += 1}"
 
-    valid_html_options = [:placeholder, :spellcheck, :toolbar, :tabindex]
+    valid_html_options = [:placeholder, :spellcheck, :toolbar, :tabindex, :data]
     attributes.merge!(options.slice(*valid_html_options))
 
     editor_tag = content_tag('trix-editor', '', attributes)
